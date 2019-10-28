@@ -1,26 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Route } from "react-router-dom";
+import FormikSignUp from "./sign-up";
+import FormikLogIn from "./log-in";
+import Profile from "./home-page";
+import FormikReviewForm from "./review-form";
+import Review from "./review";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Route exact path="/log-in" component={FormikLogIn} />
+      <Route exact path="/sign-up" component={FormikSignUp} />
+      <Route exact path="/profile" component={Profile} />
+      <Route exact path="/review/:id" component={Review} />
+      <Route exact path="/review-form" component={FormikReviewForm} />
     </div>
   );
-}
+};
 
 export default App;
